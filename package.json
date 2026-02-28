@@ -1,0 +1,19 @@
+{
+    "name": "qr-scanner",
+    "module": "index.ts",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "build": "bun build ./index.html --minify --outdir ./dist"
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "prettier": "^3.8.1"
+    },
+    "peerDependencies": {
+        "typescript": "^5"
+    },
+    "dependencies": {
+        "html5-qrcode": "^2.3.8"
+    }
+}
