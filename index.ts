@@ -4,7 +4,7 @@ const qrResult = document.querySelector('#qr-reader-results') as HTMLDivElement
 const scanBtn = document.querySelector('#scan-btn') as HTMLButtonElement
 
 const scanner = new Html5QrcodeScanner(
-    '#qr-reader',
+    'qr-reader',
     {
         fps: 30,
         qrbox: 250,
