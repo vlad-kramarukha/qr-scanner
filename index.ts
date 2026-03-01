@@ -1,24 +1,9 @@
-import { Html5QrcodeScanner } from 'html5-qrcode'
+import QrScanner from 'qr-scanner'
 
-const qrResult = document.querySelector('#qr-reader-results') as HTMLDivElement
-const scanBtn = document.querySelector('#scan-btn') as HTMLButtonElement
+const output = document.querySelector('#qr-scanner') as HTMLVideoElement
+const result = document.querySelector('#result') as HTMLDivElement
+const scanner = new QrScanner(output, (data) => {
+    result.textContent = data
+})
 
-const scanner = new Html5QrcodeScanner(
-    'qr-reader',
-    {
-        fps: 30,
-        qrbox: 250,
-    },
-    true
-)
-
-scanBtn.onclick = () => {
-    scanner.render(
-        (decodedText) => {
-            qrResult.textContent = decodedText
-        },
-        (error) => {
-            qrResult.textContent = error
-        }
-    )
-}
+scanner.start()
