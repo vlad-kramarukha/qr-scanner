@@ -8,3 +8,7 @@ body {
 .wrapper {
 	padding: 16px;
 }
+
+video {
+	width: 300px;
+}
